@@ -1,11 +1,13 @@
 import "./App.css";
-import ButtonsColors from "./components/ButtonsColors";
-import Main from "./components/Main";
+import { ButtonsColorsBg } from "./components/ButtonsColorsBg";
+import { ButtonsColorsText } from "./components/ButtonsColorsText";
+import { Main } from "./components/Main";
 function App() {
   return (
     <>
-      <ButtonsColors />
       <Main />
+      <ButtonsColorsBg />
+      <ButtonsColorsText />
     </>
   );
 }
