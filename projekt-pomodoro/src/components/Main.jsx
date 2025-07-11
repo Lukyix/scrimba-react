@@ -1,21 +1,16 @@
-import React from "react";
-import Timer from "./Timer";
+import React, { useState } from "react";
+import { Timer } from "./Timer";
 
-export default function Main() {
-  const [seconds, setSeconds] = React.useState("00");
-  const [minutes, setMinutes] = React.useState(25);
+export function Main() {
+  const [isPaused, setIsPaused] = useState(true);
 
-  function startTimer() {
-    const interval = setInterval(() => {});
+  function togglePauseResume() {
+    setIsPaused((prev) => !prev);
   }
-
-  React.useEffect(() => {
-    startTimer();
-  }, []);
 
   return (
     <>
-      <Timer seconds={seconds} minutes={minutes} />
+      <Timer togglePauseResume={togglePauseResume} isPaused={isPaused} />
     </>
   );
 }
